@@ -1,40 +1,18 @@
-<!DOCTYPE>
-<html lang="ja">
-
-<head>
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-</head>
-
-<body>
-  <div class="container">
-   <div class="row">
-	  <div class="mx-auto col-11 col-sm-10 col-lg-8 col-xl-6">
-	    <div class="top-text">
-	      <h1>welcome to <i class="fas fa-book"></i>
-	      <span class="glyphicon glyphicon-book" aria-hidden="true"></span>
-	      <b>Bookers!!</b>
-		    </h1>
-		    <p>In
-		    <span class="glyphicon glyphicon-book" aria-hidden="true"></span>
-		    <b><i class="fas fa-book"></i>Bookers</b>,<br>
-		  	you can share and exchange your opinions , inpresiions , and emotions<br>
-		  	about various books!
-		    </p>
-	    </div>
-	    <div class="btn-wrapper col-10 mx-auto">
-	    <div class="row">
-	      <%= link_to "Log in", new_user_session_path, class:"btn btn-info btn-sm btn-block mb-3 sign_in" %>
-	    </div>
-	    <div class="row">
-	      <%= link_to "Sign up", new_user_registration_path, class:"btn btn-success btn-sm btn-block sign_up" %>
-	    </div>
-   </div>
-  </div>
- </div>
- </div>
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
-</body>
-</html>
+<div class="container">
+	<div class="row">
+		<div class='mx-auto cal-11 col-sm-10 col-lg-8 col-xl-6'>
+			<h1>welcome to<i class="fas fa-book"></i><strong>Bookers</strong> !!</h1>
+			<p>In <i class="fas fa-book"></i><strong>Bookers</strong>, </p>
+			<p>you can share and exchange your opinions , inpressions , and emotions</p>
+			<p>about various books!</p>
+			<div class="btn-wrapper col-10 mx-auto">
+				<div class="row">
+					<%= link_to 'Log in',new_user_session_path, class: "btn btn-info btn-sm btn-block mb-3 sign_in" %>
+				</div>
+				<div class="row">
+					<%= link_to 'Sign Up',new_user_registration_path, class: "btn btn-success btn-sm btn-block sign_up" %>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

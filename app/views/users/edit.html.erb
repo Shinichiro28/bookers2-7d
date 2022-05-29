@@ -1,42 +1,25 @@
-<!DOCTYPE>
-<html lang="ja">
- <head>
-  <title>Bookers2</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <%= csrf_meta_tags %>
-  <%= csp_meta_tag %>
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-  <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-  <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
- </head>
- <body>
-   <p id="notice"></p>
-   <div class="container">
-     <div class="row">
-       <div class="col-sm-12 col-md-8 col-lg-5 px-5 px-sm-0 mx-auto">
-         <h2>User info</h2>
-         <% if @user.errors.any? %>
-         <%= @user.errors.count %>errors prohibited this obj from being saved:
-         <ul>
-          <% @user.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
-          <% end %>
-         </ul>
-         <% end %>
-         <%= form_with model: @user do |f| %>
-         <p>Name</p>
-         <!--入力画面-->
-         <%= f.text_field :name %>
-         <p>Image</p>
-         <%= f.file_field :profile_image, placeholder: "プロフィール画像", accept: "image/*" %>
-         <p>Introduction</p>
-         <!--入力画面-->
-         <%= f.text_area :introduction %><br>
-         <!--Create Bookボタン-->
-         <%= f.submit 'Update User' %>
-         <% end %>
-       </div>
-     </div>
+<%= form_with model:@user, local:true do |f| %>
+<%= render 'layouts/errors', obj: @user %>
+<div class='container'>
+ <div class='row'>
+  <div class="col-sm-12 col-lg-5 px-5 px-sm-0 mx-auto">
+   <h2>User info</h2>
+   <div class="form-group">
+    <%= f.label :mame %>
+    <%= f.text_field :name, class: "form-control name" %>
    </div>
- </body>
-</html>
+   <div class="form-group">
+    <%= f.label :image %>
+    <%= f.file_field :profile_image, class: "form-control-file user_image", accept: 'image/*' %>
+   </div>
+   <div class="form-group">
+    <%= f.label :introduction %>
+    <%= f.text_area :introduction, class: "form-control introduction" %>
+   </div>
+   <div class="form-group">
+    <%= f.submit class: 'btn btn-secondary' %>
+   </div>
+   <% end %>
+  </div>
+ </div>
+</div>

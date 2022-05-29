@@ -1,0 +1,22 @@
+<table class="table">
+  <thead>
+    <tr>
+      <th>グループ名</th>
+      <th>紹介文</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% groups.each do |group| %>
+    <tr>
+      <td><%= link_to group.name, group_path(group.id) %></td>
+      <td><%= group.introduction %></td>
+      <td>
+        <% if group.owner_id = current_user.id %>
+        <%= link_to 'Edit', edit_group_path(group.id), class: "btn btn-primary" %>
+        <% end %>
+        </td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>

@@ -1,0 +1,16 @@
+<h2>Create Group</h2>
+<%= form_with model:@group do |f| %>
+<div>
+  <p>グループ名</p>
+  <%= f.text_field :name %>
+</div>
+<div>
+  <p>紹介文</p>
+  <%= f.text_area :introduction %>
+</div>
+<div>
+  <p>グループ画像</p>
+  <%= f.file_field :image %>
+</div>
+<%= f.submit  class: "btn btn-primary" %>
+<% end %>

@@ -41,6 +41,11 @@
         <%= link_to 'Join this group', group_group_users_path(@group), method: :post, class: "btn btn-success" %>
        <% end %>
       </td>
+      <td>
+       <% if @group.owner_id == current_user.id %>
+       <%= link_to 'Mail', group_new_mail_path(@group) %>
+       <% end %>
+      </td>
      </tr>
     </tbody>
    </table>
